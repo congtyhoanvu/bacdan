@@ -52,6 +52,10 @@ body {
     background-color: #d0e8e0;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+html {
+    overflow-x: hidden;
 }
 .paco-page-wrap {
     max-width: 900px;
@@ -238,6 +242,12 @@ body {
 
 
 <section class="paco-banner-img">
+	    <div class="banner-slide" style="animation-delay:15s;">
+        <img src="vongbi.webp" alt="Bạc đạn vòng bi Hoàn Vũ" width="1200" height="686" loading="lazy">
+    </div>
+    <div class="banner-slide" style="animation-delay:20s;">
+        <img src="bacdan.webp" alt="Thiết bị bạc đạn Hoàn Vũ" width="1200" height="686" loading="lazy">
+    </div>
     <div class="banner-slide" style="animation-delay:0s;">
         <img src="bomdien.webp" alt="Máy bơm điện Hoàn Vũ" width="1200" height="686" loading="eager" fetchpriority="high">
     </div>
@@ -247,12 +257,7 @@ body {
     <div class="banner-slide" style="animation-delay:10s;">
         <img src="motor.webp" alt="Motor điện Hoàn Vũ" width="1200" height="686" loading="lazy">
     </div>
-    <div class="banner-slide" style="animation-delay:15s;">
-        <img src="vongbi.webp" alt="Bạc đạn vòng bi Hoàn Vũ" width="1200" height="686" loading="lazy">
-    </div>
-    <div class="banner-slide" style="animation-delay:20s;">
-        <img src="bacdan.webp" alt="Thiết bị bạc đạn Hoàn Vũ" width="1200" height="686" loading="lazy">
-    </div>
+
 </section>
 
 <style>
@@ -1217,13 +1222,13 @@ body {
 <footer class="paco-footer" style="padding-top: 0;">
     <div class="footer-container">
         <div class="footer-seo" style="border-top: 1px solid #3e4f5f; margin-top: 0; padding-top: 20px; text-align: justify; font-size: 13px;">
-            <p style="margin-bottom: 15px;">
+            <p style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
                 <span class="seo-label">Từ khóa liên quan:</span> bạc đạn, vòng bi, máy bơm điện, máy bơm diesel, tủ điện, công ty Hoàn Vũ.
             </p>
 
 
 
-            <div class="footer-copyright" style="text-align: center; margin-top: 20px; border-top: 1px solid #3e4f5f; padding-top: 15px; font-size: 16px;">
+            <div class="footer-copyright" style="text-align: center; margin-top: 20px; padding-top: 15px; font-size: 16px;">
                 © 2025 HOAN VU COMPANY. All rights reserved.
             </div>
         </div>
@@ -1575,7 +1580,7 @@ window.addEventListener('load',function(){
 <!-- ============================================================
      ĐÃ VÔ HIỆU HÓA: Script 8 - Captcha + Giới hạn đặt hàng
      Lý do: Trang này chưa cần dùng (theo yêu cầu Ông Paco).
-     Cách bật lại: xóa dòng "<!--" ngay dưới đây và dòng "-->" ở cuối script.
+     Cách bật lại: xóa dòng mở comment ngay dưới đây và dòng đóng comment ở cuối script.
      ============================================================ -->
 <!--
 <script>

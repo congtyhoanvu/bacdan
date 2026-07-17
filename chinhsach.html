@@ -52,6 +52,10 @@ body {
     background-color: #d0e8e0;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+html {
+    overflow-x: hidden;
 }
 .paco-page-wrap {
     max-width: 900px;
@@ -996,13 +1000,13 @@ body {
 <footer class="paco-footer" style="padding-top: 0;">
     <div class="footer-container">
         <div class="footer-seo" style="border-top: 1px solid #3e4f5f; margin-top: 0; padding-top: 20px; text-align: justify; font-size: 13px;">
-            <p style="margin-bottom: 15px;">
+            <p style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
                 <span class="seo-label">Từ khóa liên quan:</span> bạc đạn, vòng bi, máy bơm điện, máy bơm diesel, tủ điện, công ty Hoàn Vũ.
             </p>
 
 
 
-            <div class="footer-copyright" style="text-align: center; margin-top: 20px; border-top: 1px solid #3e4f5f; padding-top: 15px; font-size: 16px;">
+            <div class="footer-copyright" style="text-align: center; margin-top: 20px; padding-top: 15px; font-size: 16px;">
                 © 2025 HOAN VU COMPANY. All rights reserved.
             </div>
         </div>
@@ -1354,7 +1358,7 @@ window.addEventListener('load',function(){
 <!-- ============================================================
      ĐÃ VÔ HIỆU HÓA: Script 8 - Captcha + Giới hạn đặt hàng
      Lý do: Trang này chưa cần dùng (theo yêu cầu Ông Paco).
-     Cách bật lại: xóa dòng "<!--" ngay dưới đây và dòng "-->" ở cuối script.
+     Cách bật lại: xóa dòng mở comment ngay dưới đây và dòng đóng comment ở cuối script.
      ============================================================ -->
 <!--
 <script>
