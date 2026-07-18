@@ -56,7 +56,6 @@ body {
     background-color: #d0e8e0;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 html {
     overflow-x: hidden;
@@ -99,6 +98,54 @@ html {
 }
 @media (max-width: 900px) { .logo-paco { left: 15px !important; } }
 
+.paco-cert-badge {
+    position: fixed;
+    top: 48px;
+    left: calc((100vw - 900px) / 2 + 2px);
+    z-index: 9999;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #1a5aad, #003670 75%);
+    border: 3px solid #ffd700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4), inset 0 0 8px rgba(255,215,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: pacoFloatBadge 2s infinite ease-in-out;
+    pointer-events: none;
+    font-family: 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+.paco-cert-badge svg {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+}
+.paco-cert-badge .cam-ket {
+    display: block;
+    font-size: 7.5px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+    line-height: 1;
+}
+.paco-cert-badge .chinh-hang {
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    color: #ffd700;
+    line-height: 1.1;
+}
+@media (max-width: 900px) { .paco-cert-badge { left: 15px; width: 64px; height: 64px; } .paco-cert-badge svg { width: 17px; height: 17px; } .paco-cert-badge .chinh-hang { font-size: 9.5px; } .paco-cert-badge .cam-ket { font-size: 6.5px; } }
+@keyframes pacoFloatBadge {
+    0%, 100% { transform: rotate(-8deg) translateY(0); }
+    50%      { transform: rotate(-15deg) translateY(-8px); }
+}
+
 /* Hiệu ứng khi rê chuột vào nút 3 gạch */
 @media (max-width: 900px) { .menu-paco { right: 15px !important; } .noidung-menu { right: 15px !important; } }
 .menu-paco:hover {
@@ -140,6 +187,12 @@ html {
 
 <div class="logo-paco">
     <img src="logohoanvu.webp" alt="Logo Hoàn Vũ" width="36" height="36" loading="eager">
+</div>
+
+<div class="paco-cert-badge">
+    <svg viewBox="0 0 24 24" fill="#ffd700"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11.5C15.4,11.5 16,12.4 16,13V16C16,16.6 15.4,17.5 14.8,17.5H9.2C8.6,17.5 8,16.6 8,16V13C8,12.4 8.6,11.5 9.2,11.5V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10V11.5H13.5V10C13.5,8.7 12.8,8.2 12,8.2Z"/></svg>
+    <span class="cam-ket">Cam kết</span>
+    <span class="chinh-hang">CHÍNH HÃNG</span>
 </div>
 
 <div class="menu-paco" onclick="toggleMenu()" id="menuButton">☰</div>
@@ -420,6 +473,7 @@ html {
         background: #ffffff;
         transition: transform 0.25s ease, box-shadow 0.25s ease;
         cursor: pointer;
+        position: relative;
     }
     .product-box:hover,
     .product-box:active {
@@ -429,6 +483,21 @@ html {
     .product-images {
         display: flex;
         align-items: flex-start;
+        position: relative;
+    }
+    .product-code-tag {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #4c80b8;
+        color: #ffffff;
+        font-family: 'Times New Roman', serif;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        padding: 3px 10px;
+        border-top-right-radius: 8px;
+        z-index: 5;
     }
     .product-images img {
         width: 50%;
@@ -548,45 +617,53 @@ html {
                 <span>Vòng Bi | Bạc Đạn<br><span class="product-group-code">Mã SP: 6308Z - 6312Z</span></span>
             </div>
 
-            <div class="product-box" id="6308Z"><div class="product-images">
+            <div class="product-box" id="6308Z">
+                <div class="product-images">
                     <img src="6308Z.webp" alt="Vòng bi 6308Z" width="800" height="800" loading="lazy">
                     <img src="6308_-Z.webp" alt="Thông số kỹ thuật 6308Z" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6308Z</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">134.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6309Z"><div class="product-images">
+            <div class="product-box" id="6309Z">
+                <div class="product-images">
                     <img src="6309Z.webp" alt="Vòng bi 6309Z" width="800" height="800" loading="lazy">
                     <img src="6309_-Z.webp" alt="Thông số kỹ thuật 6309Z" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6309Z</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">165.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6310Z"><div class="product-images">
+            <div class="product-box" id="6310Z">
+                <div class="product-images">
                     <img src="6310Z.webp" alt="Vòng bi 6310Z" width="800" height="800" loading="lazy">
                     <img src="6310_-Z.webp" alt="Thông số kỹ thuật 6310Z" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6310Z</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">215.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6312Z"><div class="product-images">
+            <div class="product-box" id="6312Z">
+                <div class="product-images">
                     <img src="6312Z.webp" alt="Vòng bi 6312Z" width="800" height="800" loading="lazy">
                     <img src="6312_-Z.webp" alt="Thông số kỹ thuật 6312Z" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6312Z</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">350.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
@@ -596,78 +673,92 @@ html {
                 <span>Vòng Bi | Bạc Đạn<br><span class="product-group-code">Mã SP: 6201RS - 6207RS</span></span>
             </div>
 
-            <div class="product-box" id="6201RS"><div class="product-images">
+            <div class="product-box" id="6201RS">
+                <div class="product-images">
                     <img src="6201RS.webp" alt="Vòng bi 6201RS" width="800" height="800" loading="lazy">
                     <img src="6201_-2RS.webp" alt="Thông số kỹ thuật 6201RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6201RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">18.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6202RS"><div class="product-images">
+            <div class="product-box" id="6202RS">
+                <div class="product-images">
                     <img src="6202RS.webp" alt="Vòng bi 6202RS" width="800" height="800" loading="lazy">
                     <img src="6202_-2RS.webp" alt="Thông số kỹ thuật 6202RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6202RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">19.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6203RS"><div class="product-images">
+            <div class="product-box" id="6203RS">
+                <div class="product-images">
                     <img src="6203RS.webp" alt="Vòng bi 6203RS" width="800" height="800" loading="lazy">
                     <img src="6203_-2RS.webp" alt="Thông số kỹ thuật 6203RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6203RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">21.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6204RS"><div class="product-images">
+            <div class="product-box" id="6204RS">
+                <div class="product-images">
                     <img src="6204RS.webp" alt="Vòng bi 6204RS" width="800" height="800" loading="lazy">
                     <img src="6204_-2RS.webp" alt="Thông số kỹ thuật 6204RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6204RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">25.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6205RS"><div class="product-images">
+            <div class="product-box" id="6205RS">
+                <div class="product-images">
                     <img src="6205RS.webp" alt="Vòng bi 6205RS" width="800" height="800" loading="lazy">
                     <img src="6205_-2RS.webp" alt="Thông số kỹ thuật 6205RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6205RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">28.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6206RS"><div class="product-images">
+            <div class="product-box" id="6206RS">
+                <div class="product-images">
                     <img src="6206RS.webp" alt="Vòng bi 6206RS" width="800" height="800" loading="lazy">
                     <img src="6206_-2RS.webp" alt="Thông số kỹ thuật 6206RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6206RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">47.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6207RS"><div class="product-images">
+            <div class="product-box" id="6207RS">
+                <div class="product-images">
                     <img src="6207RS.webp" alt="Vòng bi 6207RS" width="800" height="800" loading="lazy">
                     <img src="6207_-2RS.webp" alt="Thông số kỹ thuật 6207RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6207RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">60.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
@@ -679,100 +770,118 @@ html {
                 <span>Vòng Bi | Bạc Đạn<br><span class="product-group-code">Mã SP: 6300RS - 6308RS</span></span>
             </div>
 
-            <div class="product-box" id="6300RS"><div class="product-images">
+            <div class="product-box" id="6300RS">
+                <div class="product-images">
                     <img src="6300RS.webp" alt="Vòng bi 6300RS" width="800" height="800" loading="lazy">
                     <img src="6300_-2RS.webp" alt="Thông số kỹ thuật 6300RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6300RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">21.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6301RS"><div class="product-images">
+            <div class="product-box" id="6301RS">
+                <div class="product-images">
                     <img src="6301RS.webp" alt="Vòng bi 6301RS" width="800" height="800" loading="lazy">
                     <img src="6301_-2RS.webp" alt="Thông số kỹ thuật 6301RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6301RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">25.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6302RS"><div class="product-images">
+            <div class="product-box" id="6302RS">
+                <div class="product-images">
                     <img src="6302RS.webp" alt="Vòng bi 6302RS" width="800" height="800" loading="lazy">
                     <img src="6302_-2RS.webp" alt="Thông số kỹ thuật 6302RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6302RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">26.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6303RS"><div class="product-images">
+            <div class="product-box" id="6303RS">
+                <div class="product-images">
                     <img src="6303RS.webp" alt="Vòng bi 6303RS" width="800" height="800" loading="lazy">
                     <img src="6303_-2RS.webp" alt="Thông số kỹ thuật 6303RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6303RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">33.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6304RS"><div class="product-images">
+            <div class="product-box" id="6304RS">
+                <div class="product-images">
                     <img src="6304RS.webp" alt="Vòng bi 6304RS" width="800" height="800" loading="lazy">
                     <img src="6304_-2RS.webp" alt="Thông số kỹ thuật 6304RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6304RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">36.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6305RS"><div class="product-images">
+            <div class="product-box" id="6305RS">
+                <div class="product-images">
                     <img src="6305RS.webp" alt="Vòng bi 6305RS" width="800" height="800" loading="lazy">
                     <img src="6305_-2RS.webp" alt="Thông số kỹ thuật 6305RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6305RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">51.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6306RS"><div class="product-images">
+            <div class="product-box" id="6306RS">
+                <div class="product-images">
                     <img src="6306RS.webp" alt="Vòng bi 6306RS" width="800" height="800" loading="lazy">
                     <img src="6306_-2RS.webp" alt="Thông số kỹ thuật 6306RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6306RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">76.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6307RS"><div class="product-images">
+            <div class="product-box" id="6307RS">
+                <div class="product-images">
                     <img src="6307RS.webp" alt="Vòng bi 6307RS" width="800" height="800" loading="lazy">
                     <img src="6307_-2RS.webp" alt="Thông số kỹ thuật 6307RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6307RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">83.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
             </div>
 
-            <div class="product-box" id="6308RS"><div class="product-images">
+            <div class="product-box" id="6308RS">
+                <div class="product-images">
                     <img src="6308RS.webp" alt="Vòng bi 6308RS" width="800" height="800" loading="lazy">
                     <img src="6308_-2RS.webp" alt="Thông số kỹ thuật 6308RS" width="800" height="800" loading="lazy">
+                    <div class="product-code-tag">6308RS</div>
                 </div>
                 <div class="product-bottom">
-                    <span class="product-price">100.000đ</span>
+                    <span class="product-price">116.000đ</span>
                     <span class="product-stock">Còn hàng</span>
                     <a href="index.html#muahang" class="product-buy-btn">Mua ngay</a>
                 </div>
